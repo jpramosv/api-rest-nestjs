@@ -1,0 +1,44 @@
+### Create a new user
+POST http://localhost:3005/auth/signup
+content-type: application/json
+
+{
+  "email":"mari.comp@gmail.com",
+  "password":"B3ll@3010"
+}
+
+### get current user
+GET http://localhost:3005/auth/whoami
+
+### login
+POST http://localhost:3005/auth/signin
+content-type: application/json
+
+{
+  "email":"mari.comp@gmail.com",
+  "password":"B3ll@3010"
+}
+
+
+### logout
+POST http://localhost:3005/auth/signout
+
+
+### findo a user
+GET http://localhost:3005/auth/9
+
+
+### find all user with a email
+GET http://localhost:3005/auth?email=asaeliass@gmail.com
+
+
+### Delete user by id
+DELETE http://localhost:3005/auth/10
+
+### Update user
+PATCH http://localhost:3005/auth/6
+content-type: application/json
+
+{
+  "email":"jaum@jaum.com"
+}

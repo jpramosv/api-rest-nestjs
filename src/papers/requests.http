@@ -1,0 +1,10 @@
+POST http://localhost:3005/papers
+content-type: application/json
+
+{
+  "category_id": 1,
+  "summary":"jsiajsa",
+  "first_paragraph":"jaumjaum",
+  "body":"paulopualo",
+  "publish_date":"12/12/12"
+}
