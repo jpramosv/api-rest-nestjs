@@ -1,9 +1,7 @@
-import { Body, Controller, Post, UseGuards } from '@nestjs/common';
+import { Body, Controller, Get, NotFoundException, Param, Post, UseGuards } from '@nestjs/common';
 import { CreatePaperDto } from './dtos/create-papers.dto';
 import { PapersService } from './papers.service';
 import { AuthGuard } from '../guards/auth.guards'
-import { CurrentUser } from 'src/users/decoretors/current-user.decorator';
-import { User } from 'src/users/user.entity';
 
 @Controller('papers')
 export class PapersController {
@@ -12,9 +10,18 @@ export class PapersController {
 
   @Post()
   @UseGuards(AuthGuard)
-  createPaper(@Body() body: CreatePaperDto, @CurrentUser() user: User){
+  createPaper(@Body() body: CreatePaperDto){
     
-    return this.papersService.create(body, user);
+    return this.papersService.create(body);
 
+  }
+
+  @Get('/:id')
+  async findPaper(@Param('id') id: string) {
+    const paper = await this.papersService.findOne(parseInt(id));
+    if (!paper) {
+      throw new NotFoundException('paper not found');
+    }
+    return paper;
   }
 }

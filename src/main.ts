@@ -11,7 +11,7 @@ async function bootstrap() {
   app.useGlobalPipes(
     new ValidationPipe({
       //garante o envio
-      whitelist: true
+      whitelist: false
     }),
   )
   await app.listen(3005);

@@ -6,5 +6,11 @@ content-type: application/json
   "summary":"jsiajsa",
   "first_paragraph":"jaumjaum",
   "body":"paulopualo",
-  "publish_date":"12/12/12"
+  "publish_date":"12/12/12",
+  "author":{
+    "id": 1
+  }
 }
+
+###GET PAPER
+GET http://localhost:3005/papers/2
