@@ -5,11 +5,12 @@ import { AppService } from './app.service';
 import { UsersModule } from './users/users.module';
 import { config } from 'orm.config';
 import { PapersModule } from './papers/papers.module';
+import { AuthorModule } from './author/author.module';
 
 
 
 @Module({
-  imports: [TypeOrmModule.forRoot(config), UsersModule, PapersModule],
+  imports: [TypeOrmModule.forRoot(config), UsersModule, PapersModule, AuthorModule],
   controllers: [AppController],
   providers: [AppService],
 })

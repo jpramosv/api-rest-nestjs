@@ -1,14 +1,12 @@
-import { Column, Entity, PrimaryGeneratedColumn, ManyToMany, ManyToOne } from "typeorm";
-import { User } from "src/users/user.entity";
+import { Author } from "src/author/author.entity";
+import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn} from "typeorm";
+
 
 @Entity()
 export class Papers{
 
   @PrimaryGeneratedColumn()
   papers_id: number;
-
-  @ManyToOne(()=> User, (user) => user.papers)
-  author_id: User;
 
   @Column()
   category_id: number;
@@ -25,5 +23,8 @@ export class Papers{
   @Column()
   publish_date: string;
 
+
+  @ManyToOne(()=>Author, (author)=>author.papers, {eager: true})
+   author: Author;
 
 }

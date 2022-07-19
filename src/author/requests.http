@@ -1,0 +1,11 @@
+POST http://localhost:3005/author
+content-type: application/json
+
+{
+  "name":"Joaquim, Antoinu"  
+}
+
+
+###get author id
+GET http://localhost:3005/author/2
+

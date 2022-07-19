@@ -1,4 +1,5 @@
 import { IsString, IsNumber } from "class-validator";
+import { Author } from "src/author/author.entity";
 
 
 export class CreatePaperDto{
@@ -18,7 +19,6 @@ export class CreatePaperDto{
     
     @IsString()
     publish_date: string;
-  
-  
-  
+
+    
 }
